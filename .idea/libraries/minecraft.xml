@@ -1,0 +1,42 @@
+<component name="libraryTable">
+  <library name="minecraft">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/guava-17.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/authlib-1.5.21.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/log4j-core-2.0-beta9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/gson-2.2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/twitch-6.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/codecwav-20101023.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/httpcore-4.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/jinput-platform-2.0.5-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/twitch-platform-6.5-natives-windows-64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/oshi-core-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/netty-1.8.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/jopt-simple-4.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/jna-3.4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/librarylwjglopenal-20100824.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/lwjgl-platform-2.9.4-nightly-20150209-natives-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/log4j-api-2.0-beta9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/httpclient-4.3.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/netty-all-4.0.23.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/lwjgl_util-2.9.4-nightly-20150209.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/commons-logging-1.1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/soundsystem-20120107.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/commons-codec-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/jinput-2.0.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/libraryjavasound-20101123.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/commons-lang3-3.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/commons-io-2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/jutils-1.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/lwjgl-2.9.4-nightly-20150209.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/realms-1.7.39.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/codecjorbis-20101023.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/twitch-external-platform-4.5-natives-windows-64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/platform-3.4.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/icu4j-core-mojang-51.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/commons-compress-1.8.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
