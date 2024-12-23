@@ -5,12 +5,13 @@ import cn.trystage.module.Module;
 import cn.trystage.value.impl.BooleanValue;
 import cn.trystage.value.impl.ModeValue;
 import cn.trystage.value.impl.NumberValue;
+import com.yumegod.obfuscation.Native;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.File;
 import java.util.List;
-
+@Native
 public class CustomCrossair extends Module {
     public BooleanValue dot = new BooleanValue("Dot",true);
     public NumberValue dotSize = new NumberValue("Size",0.2F,0.1F,5F,0.1F);

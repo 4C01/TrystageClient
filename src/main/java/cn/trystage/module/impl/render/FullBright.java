@@ -8,7 +8,7 @@ import com.yumegod.obfuscation.Native;
 
 import java.util.ArrayList;
 
-
+@Native
 public class FullBright extends Module {
     private final NumberValue gamma = new NumberValue("Gamma",10F,0F,10F,0.1F);
     public FullBright() {

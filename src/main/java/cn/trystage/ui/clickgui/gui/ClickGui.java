@@ -12,6 +12,7 @@ import cn.trystage.value.AbstractValue;
 import cn.trystage.value.impl.BooleanValue;
 import cn.trystage.value.impl.ModeValue;
 import cn.trystage.value.impl.NumberValue;
+import com.yumegod.obfuscation.Native;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.ScaledResolution;
@@ -26,7 +27,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
+@Native
 public class ClickGui extends GuiScreen {
 
     private boolean close = false;

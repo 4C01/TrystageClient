@@ -11,7 +11,6 @@ import org.lwjgl.opengl.Display;
 import static net.minecraft.util.Session.Type.LEGACY;
 import static net.minecraft.util.Session.Type.MOJANG;
 
-@Native
 public enum Client {
 
     INSTANCE;

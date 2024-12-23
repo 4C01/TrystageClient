@@ -5,10 +5,11 @@ import cn.trystage.event.impl.misc.EventUpdate;
 import cn.trystage.module.Category;
 import cn.trystage.module.Module;
 import cn.trystage.value.impl.BooleanValue;
+import com.yumegod.obfuscation.Native;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.input.Keyboard;
 
-
+@Native
 public class ToggleSprint extends Module {
     public BooleanValue test = new BooleanValue("test", false);
     public ToggleSprint(){

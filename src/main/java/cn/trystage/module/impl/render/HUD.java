@@ -9,13 +9,14 @@ import cn.trystage.module.ModuleManager;
 import cn.trystage.ui.font.FontManager;
 import cn.trystage.utils.RoundedUtil;
 import cn.trystage.value.impl.BooleanValue;
+import com.yumegod.obfuscation.Native;
 import net.minecraft.client.Minecraft;
 
 import java.awt.*;
 import java.util.Collections;
 import java.util.Comparator;
 
-
+@Native
 public class HUD extends Module {
     private final BooleanValue fps = new BooleanValue("Show FPS in title",true);
     public HUD(){

@@ -8,6 +8,7 @@ import cn.trystage.utils.RenderUtil;
 import cn.trystage.ui.font.FontManager;
 import cn.trystage.utils.RoundedUtil;
 import cn.trystage.value.impl.NumberValue;
+import com.yumegod.obfuscation.Native;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,7 +18,7 @@ import net.minecraft.util.ResourceLocation;
 import java.awt.*;
 import java.util.ArrayList;
 
-
+@Native
 public class PotionEffects extends Module {
     public NumberValue x = new NumberValue("x", 210, 0, 1000, 10);
     public NumberValue y = new NumberValue("y", 27, 0, 1000, 10);
