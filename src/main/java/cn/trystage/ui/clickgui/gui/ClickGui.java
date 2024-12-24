@@ -17,6 +17,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.util.ResourceLocation;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
@@ -252,10 +253,10 @@ public class ClickGui extends GuiScreen {
                 RenderUtil.drawGradientRect(windowX + 430 + valuemodx, windowY + 85, windowX + width, windowY + 87, theme.Modules.getRGB(), theme.BG_4.getRGB());
 
                 FontManager.font16.drawString(selectMod.name, (int) (windowX + 460 + valuemodx), (int) (windowY + 70), theme.FONT.getRGB());
-//                RenderUtil.drawCustomImage(windowX + 440 + valuemodx, windowY + 68, 8, 8, new ResourceLocation("client/back.png"), theme.FONT_C.getRGB());
+                RenderUtil.drawCustomImage(windowX + 440 + valuemodx, windowY + 68, 12, 12, new ResourceLocation("Trystage/images/back.png"), theme.FONT_C.getRGB());
 
-                FontManager.font16.drawString("BACK", windowX + 434 + valuemodx, windowY + 71, theme.BG_3.getRGB());
-                FontManager.font16.drawString("BACK", windowX + 433 + valuemodx, windowY + 70, -1);
+//                FontManager.font16.drawString("BACK", windowX + 434 + valuemodx, windowY + 71, theme.BG_3.getRGB());
+//                FontManager.font16.drawString("BACK", windowX + 433 + valuemodx, windowY + 70, -1);
                 if (isHovered(windowX + 430 + (int) valuemodx, windowY + 60, windowX + width, windowY + height - 20, mouseX, mouseY)) {
                     if (dWheel < 0 && Math.abs(valueRole) + 170 < (selectMod.values.size() * 25)) {
                         valueRole -= 32;
@@ -307,7 +308,7 @@ public class ClickGui extends GuiScreen {
 //                        if (v.optionAnimNow != v.optionAnim) {
 //                            v.optionAnimNow += (v.optionAnim - v.optionAnimNow) / 20;
 //                        }
-                        valuey += 25;
+                        valuey += 20;
                     }
                 }
                 for (AbstractValue v : selectMod.values) {
@@ -358,7 +359,7 @@ public class ClickGui extends GuiScreen {
                             RenderUtil.drawRoundedRect(windowX + 446 + valuemodx, valuey + 3, windowX + width - 6, valuey + 21, 4, theme.BG);
                             FontManager.font16.drawString(modeValue.getModeAsString(), (int) (windowX + 455 + valuemodx), (int) (valuey + 8), theme.FONT.getRGB());
                             FontManager.font16.drawString(v.getName(), (int) (windowX + 445 + valuemodx), (int) (valuey - 11), theme.FONT_C.getRGB());
-                            FontManager.font12.drawString("(LeftClick to change value)", (int) (windowX + 448 + valuemodx + FontManager.font16.getWidth(v.getName())), (int) (valuey - 9), theme.Option_U_C.getRGB());
+                            FontManager.font12.drawString("(LeftClick to change)", (int) (windowX + 448 + valuemodx + FontManager.font16.getWidth(v.getName())), (int) (valuey - 9), theme.Option_U_C.getRGB());
                             if (isHovered(windowX + 445 + valuemodx, valuey + 2, windowX + width - 5, valuey + 22, mouseX, mouseY) && Mouse.isButtonDown(0) && valuetimer.delay(300)) {
                                 if (Arrays.binarySearch(modeValue.getModes(), modeValue.getValue()) < modeValue.getModes().length - 1) {
                                     v.setValue(modeValue

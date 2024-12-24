@@ -28,6 +28,7 @@ public class ModuleManager {
         addModule(new Clickgui());
         addModule(new FullBright());
         addModule(new CustomCrossair());
+        addModule(new StatusDisplay());
     }
 
     public Module getModule(String name) {

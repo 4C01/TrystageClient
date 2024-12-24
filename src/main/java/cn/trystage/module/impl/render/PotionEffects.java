@@ -7,6 +7,7 @@ import cn.trystage.module.Module;
 import cn.trystage.utils.RenderUtil;
 import cn.trystage.ui.font.FontManager;
 import cn.trystage.utils.RoundedUtil;
+import cn.trystage.value.impl.BooleanValue;
 import cn.trystage.value.impl.NumberValue;
 import com.yumegod.obfuscation.Native;
 import net.minecraft.client.Minecraft;
@@ -20,20 +21,13 @@ import java.util.ArrayList;
 
 @Native
 public class PotionEffects extends Module {
-    public NumberValue x = new NumberValue("x", 210, 0, 1000, 10);
-    public NumberValue y = new NumberValue("y", 27, 0, 1000, 10);
+    public NumberValue x = new NumberValue("x", 0, 0, 1000, 10);
+    public NumberValue y = new NumberValue("y", 300, 0, 1000, 10);
+    public BooleanValue title = new BooleanValue("title", true);
 
     public PotionEffects() {
         super("PotionEffects", Category.RENDER);
         this.setState(true);
-    }
-
-    public int getX(){
-        return x.getValue().intValue();
-    }
-
-    public int getY(){
-        return y.getValue().intValue();
     }
 
     @EventTarget
@@ -41,9 +35,10 @@ public class PotionEffects extends Module {
 
         // 获取当前客户端玩家
         EntityPlayer player = Minecraft.getMinecraft().thePlayer;
-
+        if(title.getValue()){
         RoundedUtil.drawRound(x.getValue().intValue(), y.getValue().intValue(), FontManager.tenacitybold22.getWidth("Potion Effects") + 8, FontManager.tenacitybold22.getHeight() + 8, 2, new Color(0, 0, 0, 75));
         FontManager.tenacitybold22.drawString("Potion Effects", x.getValue().intValue() + 3, y.getValue().intValue() + 3, -1);
+        }
         int posy = y.getValue().intValue() + FontManager.bold20.getHeight() + 13;
         if (player != null) {
             ArrayList<PotionEffect> ActivePotionEffects = new ArrayList<PotionEffect>(player.getActivePotionEffects());

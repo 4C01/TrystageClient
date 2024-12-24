@@ -5,6 +5,7 @@ import cn.trystage.event.EventManager;
 import cn.trystage.module.ModuleManager;
 import com.yumegod.obfuscation.Native;
 import net.minecraft.client.Minecraft;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Session;
 import org.lwjgl.opengl.Display;
 
@@ -18,6 +19,8 @@ public enum Client {
     public String version = "b1";
     public String user = "";
     public Minecraft mc = Minecraft.getMinecraft();
+    public MinecraftServer mcs = MinecraftServer.getServer();
+    public Runtime runtime;
     public EventManager eventManager;
     public ModuleManager moduleManager;
     public CommandManager commandManager;
@@ -26,6 +29,7 @@ public enum Client {
 
 
     public void start() {
+        runtime = Runtime.getRuntime();
         discordInstance.start();
         eventManager = new EventManager();
         moduleManager = new ModuleManager();
