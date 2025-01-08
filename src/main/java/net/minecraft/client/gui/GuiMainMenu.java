@@ -497,7 +497,7 @@ public class GuiMainMenu extends GuiScreen implements GuiYesNoCallback
 
         FontManager.font20.drawString("MCP 918", 4, this.height - 24, -1);
         FontManager.font20.drawString("Minecraft 1.8.8", 4, this.height - 12, -1);
-        FontManager.font20.drawString("Client by jiuxian_baka and Trystage4C01", this.width - FontManager.font20.getWidth("Client by jiuxian_baka and Trystage4C01") - 4, this.height - 12, -1);
+        FontManager.font20.drawString("Client by Trystage4C01", this.width - FontManager.font20.getWidth("Client by Trystage4C01") - 4, this.height - 12, -1);
 
         if (this.openGLWarning1 != null && this.openGLWarning1.length() > 0)
         {

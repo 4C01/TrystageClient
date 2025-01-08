@@ -170,13 +170,16 @@ public class GuiIngame extends Gui
         this.mc.getTextureManager().bindTexture(icons);
         GlStateManager.enableBlend();
 
-        if (this.showCrosshair() && this.mc.gameSettings.thirdPersonView < 1)
+        if (this.showCrosshair() && this.mc.gameSettings.thirdPersonView < 1 && !this.customCrossAir)
         {
             GlStateManager.tryBlendFuncSeparate(775, 769, 1, 0);
             GlStateManager.enableAlpha();
             this.drawTexturedModalRect(i / 2 - 7, j / 2 - 7, 0, 0, 16, 16);
         }else{
-            if(this.customCrossAir){
+            if(this.customCrossAir && this.mc.gameSettings.thirdPersonView < 1){
+                GlStateManager.tryBlendFuncSeparate(775, 769, 1, 0);
+                GlStateManager.enableAlpha();
+                this.drawTexturedModalRect(i / 2 - 7, j / 2 - 7, 0, 0, 16, 16);
                 CustomCrossair customCrossair = ((CustomCrossair)Client.INSTANCE.moduleManager.getModule("CustomCrossair"));
                 int height = customCrossair.height.getValue().intValue();
                 int width = customCrossair.width.getValue().intValue();
