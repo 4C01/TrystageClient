@@ -408,6 +408,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
             return;
         }
 
+        SplashProgress.setPrgress(1,"Minecraft - Starting");
         while (true)
         {
             try
@@ -467,6 +468,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
      */
     private void startGame() throws LWJGLException, IOException
     {
+        SplashProgress.setPrgress(1,"Minecraft - Initializing");
         this.gameSettings = new GameSettings(this, this.mcDataDir);
         this.defaultResourcePacks.add(this.mcDefaultResourcePack);
         this.startTimerHackThread();
@@ -540,7 +542,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         GlStateManager.loadIdentity();
         GlStateManager.matrixMode(5888);
         this.checkGLError("Startup");
-        SplashProgress.setPrgress(1,"Minecraft - Initializing");
+        SplashProgress.setPrgress(1,"Minecraft - Loading Texture");
         this.textureMapBlocks = new TextureMap("textures");
         this.textureMapBlocks.setMipmapLevels(this.gameSettings.mipmapLevels);
         this.renderEngine.loadTickableTexture(TextureMap.locationBlocksTexture, this.textureMapBlocks);

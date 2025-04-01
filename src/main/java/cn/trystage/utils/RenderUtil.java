@@ -178,15 +178,17 @@ public class RenderUtil {
     }
 
     public static void drawCustomImage(int x, int y, int width, int height, ResourceLocation image) {
+
         ScaledResolution scaledResolution = new ScaledResolution(Minecraft.getMinecraft());
         GL11.glDisable((int) 2929);
         GL11.glEnable((int) 3042);
-        GL11.glDepthMask((boolean) false);
+        GL11.glDepthMask(false);
         OpenGlHelper.glBlendFunc((int) 770, (int) 771, (int) 1, (int) 0);
         GL11.glColor4f((float) 1.0f, (float) 1.0f, (float) 1.0f, (float) 1.0f);
         Minecraft.getMinecraft().getTextureManager().bindTexture(image);
         Gui.drawModalRectWithCustomSizedTexture((int) x, (int) y, (float) 0.0f, (float) 0.0f, (int) width, (int) height, (float) width, (float) height);
-        GL11.glDepthMask((boolean) true);
+        // 恢复原始状态
+        GL11.glDepthMask(true);
         GL11.glDisable((int) 3042);
         GL11.glEnable((int) 2929);
     }

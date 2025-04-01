@@ -11,6 +11,7 @@ import cn.trystage.utils.RoundedUtil;
 import cn.trystage.value.impl.BooleanValue;
 import com.yumegod.obfuscation.Native;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.Session;
 
 import java.awt.*;
 import java.util.Collections;
@@ -26,12 +27,12 @@ public class HUD extends Module {
 
     @EventTarget
     public void onRender2D(EventRender2D event){
-//        String prefix = (Client.INSTANCE.user == "jiuxian_baka") || (Client.INSTANCE.user == "Trystage4C01") ? "[Dev]" : "[Zako]";
+        String prefix = (Client.INSTANCE.user.equals("jiuxian_baka") && mc.getSession().getSessionType() == Session.Type.MSA) || (Client.INSTANCE.user.equals("Trystage4C01")) || (Client.INSTANCE.user.equals("TrystageBedwars") && mc.getSession().getSessionType() == Session.Type.MSA) ? "[Dev]" : "";
         String title;
         if(fps.getValue().booleanValue()){
-            title = " " + Client.INSTANCE.version + " | " + Minecraft.getDebugFPS() + "FPS | " + Client.INSTANCE.user;
+            title = " " + Client.INSTANCE.version + " | " + Minecraft.getDebugFPS() + "FPS | " + prefix + Client.INSTANCE.user;
         }else {
-            title = " " + Client.INSTANCE.version + " | " + Client.INSTANCE.user;
+            title = " " + Client.INSTANCE.version + " | " + prefix +Client.INSTANCE.user;
         }
         RoundedUtil.drawRound(5, 5, FontManager.bold20.getWidth(Client.INSTANCE.name) + FontManager.font20.getWidth(title) + 8, FontManager.font20.getHeight() + 8, 2, new Color(0, 0, 0, 75));
         FontManager.font20.drawString(title, 8 + FontManager.bold20.getWidth(Client.INSTANCE.name), 8, -1);

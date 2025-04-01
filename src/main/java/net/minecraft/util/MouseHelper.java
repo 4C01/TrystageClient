@@ -34,5 +34,6 @@ public class MouseHelper
     {
         this.deltaX = Mouse.getDX();
         this.deltaY = Mouse.getDY();
+        Mouse.setCursorPosition(Display.getWidth() / 2, Display.getHeight() / 2);
     }
 }

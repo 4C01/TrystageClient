@@ -4,14 +4,10 @@ import cn.trystage.command.CommandManager;
 import cn.trystage.event.EventManager;
 import cn.trystage.module.ModuleManager;
 import cn.trystage.ui.SplashProgress;
-import com.yumegod.obfuscation.Native;
 import net.minecraft.client.Minecraft;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Session;
 import org.lwjgl.opengl.Display;
-
-import static net.minecraft.util.Session.Type.LEGACY;
-import static net.minecraft.util.Session.Type.MOJANG;
 
 public enum Client {
 
@@ -42,7 +38,7 @@ public enum Client {
         moduleManager.loadMods();
         commandManager.loadCommands();
         SplashProgress.setPrgress(5,"Trystage - Small Feature");
-        if( (user.equals("jiuxian_baka") && mc.getSession().getProfile().getId().toString().equals("72397791-ab16-43a0-a6ec-271a626834c6")) || (user.equals("Trystage4C01") && mc.getSession().getProfile().getId().toString().equals("7ebbfd89-4095-4609-82c6-21b964469928"))){
+        if((user.equals("jiuxian_baka") && mc.getSession().getSessionType() == Session.Type.MSA) || (user.equals("Trystage4C01")) || (user.equals("TrystageBedwars") && mc.getSession().getSessionType() == Session.Type.MSA)){
             prefix = "[DEV]";
         }
         Display.setTitle(name + " " + version + " " + prefix + user);

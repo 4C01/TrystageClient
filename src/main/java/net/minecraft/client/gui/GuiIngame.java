@@ -176,25 +176,24 @@ public class GuiIngame extends Gui
             GlStateManager.enableAlpha();
             this.drawTexturedModalRect(i / 2 - 7, j / 2 - 7, 0, 0, 16, 16);
         }else{
-            if(this.customCrossAir && this.mc.gameSettings.thirdPersonView < 1){
-                GlStateManager.tryBlendFuncSeparate(775, 769, 1, 0);
-                GlStateManager.enableAlpha();
-                this.drawTexturedModalRect(i / 2 - 7, j / 2 - 7, 0, 0, 16, 16);
-                CustomCrossair customCrossair = ((CustomCrossair)Client.INSTANCE.moduleManager.getModule("CustomCrossair"));
-                int height = customCrossair.height.getValue().intValue();
-                int width = customCrossair.width.getValue().intValue();
-                Float dotSize = customCrossair.dotSize.getValue().floatValue();
-                RenderUtil.drawCustomImage(i / 2 - width / 2, j / 2 - height / 2,width, height,
-                        new ResourceLocation("Trystage/images/crossair/" +
-                        customCrossair.customCrossairType.getValue() + ".png"));
-                if(customCrossair.dot.getValue()){
-                    RenderUtil.drawRoundedRect(i / 2 - dotSize / 2,j / 2 - dotSize / 2, i / 2 + dotSize / 2,j / 2 + dotSize / 2, dotSize / 2, -1);
+            if(this.showCrosshair() && this.customCrossAir){
+                if(this.mc.gameSettings.thirdPersonView < 1){
+                    CustomCrossair customCrossair = ((CustomCrossair)Client.INSTANCE.moduleManager.getModule("CustomCrossair"));
+                    int height = customCrossair.height.getValue().intValue();
+                    int width = customCrossair.width.getValue().intValue();
+                    Float dotSize = customCrossair.dotSize.getValue().floatValue();
+                    this.mc.getTextureManager().bindTexture(new ResourceLocation("Trystage/images/crossair/" +customCrossair.customCrossairType.getValue() + ".png"));
+                    Gui.drawModalRectWithCustomSizedTexture((int) i / 2 - width / 2, (int) j / 2 - height / 2 + 1, (float) 0.0f, (float) 0.0f, (int) width, (int) height, (float) width, (float) height);
+                    this.mc.getTextureManager().bindTexture(icons);
+                    if(customCrossair.dot.getValue()){
+                        RenderUtil.drawRoundedRect(i / 2 - dotSize / 2 + .2F,j / 2 - dotSize / 2 + 1.8F, i / 2 + dotSize / 2,j / 2 + dotSize / 2, dotSize / 2 - 1, -1);
+                    }
                 }
             }
-
         }
-
+        GlStateManager.enableBlend();
         GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
+        GlStateManager.enableAlpha();
         this.mc.mcProfiler.startSection("bossHealth");
         this.renderBossHealth();
         this.mc.mcProfiler.endSection();
@@ -533,9 +532,6 @@ public class GuiIngame extends Gui
 
     protected boolean showCrosshair()
     {
-        if(customCrossAir){
-            return false;
-        }
         if (this.mc.gameSettings.showDebugInfo && !this.mc.thePlayer.hasReducedDebug() && !this.mc.gameSettings.reducedDebugInfo)
         {
             return false;
