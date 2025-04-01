@@ -22,6 +22,8 @@ import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import cn.trystage.utils.ServerDataFeatured;
+
 public class ServerListEntryNormal implements GuiListExtended.IGuiListEntry
 {
     private static final Logger logger = LogManager.getLogger();
@@ -73,6 +75,11 @@ public class ServerListEntryNormal implements GuiListExtended.IGuiListEntry
                     }
                 }
             });
+        }
+
+        boolean isFeaturedServer = field_148301_e instanceof ServerDataFeatured;
+        if(isFeaturedServer){
+            drawImg(x , y,false,ServerDataFeatured.FeatureServerIcon);
         }
 
         boolean flag = this.field_148301_e.version > 47;
@@ -201,33 +208,29 @@ public class ServerListEntryNormal implements GuiListExtended.IGuiListEntry
                     Gui.drawModalRectWithCustomSizedTexture(x, y, 0.0F, 0.0F, 32, 32, 256.0F, 256.0F);
                 }
             }
+            if(!isFeaturedServer) {
+                if (this.field_148303_c.func_175392_a(this, slotIndex)) {
+                    if (k1 < 16 && l1 < 16) {
+                        Gui.drawModalRectWithCustomSizedTexture(x, y, 96.0F, 32.0F, 32, 32, 256.0F, 256.0F);
+                    } else {
+                        Gui.drawModalRectWithCustomSizedTexture(x, y, 96.0F, 0.0F, 32, 32, 256.0F, 256.0F);
+                    }
+                }
 
-            if (this.field_148303_c.func_175392_a(this, slotIndex))
-            {
-                if (k1 < 16 && l1 < 16)
-                {
-                    Gui.drawModalRectWithCustomSizedTexture(x, y, 96.0F, 32.0F, 32, 32, 256.0F, 256.0F);
-                }
-                else
-                {
-                    Gui.drawModalRectWithCustomSizedTexture(x, y, 96.0F, 0.0F, 32, 32, 256.0F, 256.0F);
-                }
-            }
-
-            if (this.field_148303_c.func_175394_b(this, slotIndex))
-            {
-                if (k1 < 16 && l1 > 16)
-                {
-                    Gui.drawModalRectWithCustomSizedTexture(x, y, 64.0F, 32.0F, 32, 32, 256.0F, 256.0F);
-                }
-                else
-                {
-                    Gui.drawModalRectWithCustomSizedTexture(x, y, 64.0F, 0.0F, 32, 32, 256.0F, 256.0F);
+                if (this.field_148303_c.func_175394_b(this, slotIndex)) {
+                    if (k1 < 16 && l1 > 16) {
+                        Gui.drawModalRectWithCustomSizedTexture(x, y, 64.0F, 32.0F, 32, 32, 256.0F, 256.0F);
+                    } else {
+                        Gui.drawModalRectWithCustomSizedTexture(x, y, 64.0F, 0.0F, 32, 32, 256.0F, 256.0F);
+                    }
                 }
             }
         }
     }
-
+    private void drawImg(int x, int y, boolean lower, ResourceLocation textures) {
+        this.mc.getTextureManager().bindTexture(textures);
+        Gui.drawModalRectWithCustomSizedTexture(x - 16 , lower ? y + 16 : y, 0.0F, 0.0F, 8, 8, 8, 8);
+    }
     protected void func_178012_a(int p_178012_1_, int p_178012_2_, ResourceLocation p_178012_3_)
     {
         this.mc.getTextureManager().bindTexture(p_178012_3_);
@@ -292,28 +295,24 @@ public class ServerListEntryNormal implements GuiListExtended.IGuiListEntry
      */
     public boolean mousePressed(int slotIndex, int p_148278_2_, int p_148278_3_, int p_148278_4_, int p_148278_5_, int p_148278_6_)
     {
-        if (p_148278_5_ <= 32)
-        {
-            if (p_148278_5_ < 32 && p_148278_5_ > 16 && this.func_178013_b())
-            {
+        if (p_148278_5_ <= 32) {
+            if (p_148278_5_ < 32 && p_148278_5_ > 16 && this.func_178013_b()) {
                 this.field_148303_c.selectServer(slotIndex);
                 this.field_148303_c.connectToSelected();
                 return true;
             }
+            if (!(this.field_148303_c.getServerList().getServerData(slotIndex) instanceof ServerDataFeatured)) {
+                if (p_148278_5_ < 16 && p_148278_6_ < 16 && this.field_148303_c.func_175392_a(this, slotIndex)) {
+                    this.field_148303_c.func_175391_a(this, slotIndex, GuiScreen.isShiftKeyDown());
+                    return true;
+                }
 
-            if (p_148278_5_ < 16 && p_148278_6_ < 16 && this.field_148303_c.func_175392_a(this, slotIndex))
-            {
-                this.field_148303_c.func_175391_a(this, slotIndex, GuiScreen.isShiftKeyDown());
-                return true;
-            }
-
-            if (p_148278_5_ < 16 && p_148278_6_ > 16 && this.field_148303_c.func_175394_b(this, slotIndex))
-            {
-                this.field_148303_c.func_175393_b(this, slotIndex, GuiScreen.isShiftKeyDown());
-                return true;
+                if (p_148278_5_ < 16 && p_148278_6_ > 16 && this.field_148303_c.func_175394_b(this, slotIndex)) {
+                    this.field_148303_c.func_175393_b(this, slotIndex, GuiScreen.isShiftKeyDown());
+                    return true;
+                }
             }
         }
-
         this.field_148303_c.selectServer(slotIndex);
 
         if (Minecraft.getSystemTime() - this.field_148298_f < 250L)

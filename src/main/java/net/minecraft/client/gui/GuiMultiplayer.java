@@ -456,7 +456,7 @@ public class GuiMultiplayer extends GuiScreen implements GuiYesNoCallback
 
     public boolean func_175392_a(ServerListEntryNormal p_175392_1_, int p_175392_2_)
     {
-        return p_175392_2_ > 0;
+        return p_175392_2_ > this.savedServerList.getFeaturedServerCount();
     }
 
     public boolean func_175394_b(ServerListEntryNormal p_175394_1_, int p_175394_2_)

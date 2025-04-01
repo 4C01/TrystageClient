@@ -2,6 +2,7 @@ package net.minecraft.client;
 
 import cn.trystage.Client;
 import cn.trystage.event.impl.misc.EventKeyboard;
+import cn.trystage.ui.SplashProgress;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -539,11 +540,13 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         GlStateManager.loadIdentity();
         GlStateManager.matrixMode(5888);
         this.checkGLError("Startup");
+        SplashProgress.setPrgress(1,"Minecraft - Initializing");
         this.textureMapBlocks = new TextureMap("textures");
         this.textureMapBlocks.setMipmapLevels(this.gameSettings.mipmapLevels);
         this.renderEngine.loadTickableTexture(TextureMap.locationBlocksTexture, this.textureMapBlocks);
         this.renderEngine.bindTexture(TextureMap.locationBlocksTexture);
         this.textureMapBlocks.setBlurMipmapDirect(false, this.gameSettings.mipmapLevels > 0);
+        SplashProgress.setPrgress(1,"Minecraft - Initialize Render");
         this.modelManager = new ModelManager(this.textureMapBlocks);
         this.mcResourceManager.registerReloadListener(this.modelManager);
         this.renderItem = new RenderItem(this.renderEngine, this.modelManager);
@@ -560,6 +563,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
         GlStateManager.viewport(0, 0, this.displayWidth, this.displayHeight);
         this.effectRenderer = new EffectRenderer(this.theWorld, this.renderEngine);
         this.checkGLError("Post startup");
+        SplashProgress.setPrgress(1,"Minecraft - Initialize GUI");
         this.ingameGUI = new GuiIngame(this);
 
         if (this.serverName != null)

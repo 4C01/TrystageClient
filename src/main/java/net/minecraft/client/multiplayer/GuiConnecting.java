@@ -71,7 +71,7 @@ public class GuiConnecting extends GuiScreen
                     if(ip == "bw.trystage.win"
                     || ip == "bw.trystage.cn"
                     || ip == "trystage.win"
-                    || ip == "trystage.cn"
+                    || ip == "frp.tsmp.top:2333"
                     || ip == "mc.trystage.win"
                     || ip == "mc.trystage.cn")
                     Client.INSTANCE.getDiscordInstance().update("Playing","Trystage-Server");

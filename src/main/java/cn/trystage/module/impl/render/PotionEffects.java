@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @Native
 public class PotionEffects extends Module {
     public NumberValue x = new NumberValue("x", 0, 0, 1000, 10);
-    public NumberValue y = new NumberValue("y", 300, 0, 1000, 10);
+    public NumberValue y = new NumberValue("y", 150, 0, 1000, 10);
     public BooleanValue title = new BooleanValue("title", true);
 
     public PotionEffects() {

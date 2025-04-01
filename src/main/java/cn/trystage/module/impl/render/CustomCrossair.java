@@ -20,7 +20,7 @@ public class CustomCrossair extends Module {
     public NumberValue width = new NumberValue("Height",16,0,64,2);
     public CustomCrossair(){
         super("CustomCrossair", Category.RENDER);
-        this.setState(true);
+        this.setState(false);
     }
 
     @Override

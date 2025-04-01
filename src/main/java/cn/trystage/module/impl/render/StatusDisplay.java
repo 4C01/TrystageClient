@@ -6,23 +6,17 @@ import cn.trystage.event.impl.render.EventRender2D;
 import cn.trystage.module.Category;
 import cn.trystage.module.Module;
 import cn.trystage.ui.font.FontManager;
-import cn.trystage.utils.RenderUtil;
 import cn.trystage.utils.RoundedUtil;
 import cn.trystage.value.impl.BooleanValue;
 import cn.trystage.value.impl.ModeValue;
 import cn.trystage.value.impl.NumberValue;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.I18n;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.ResourceLocation;
 
 import java.awt.*;
-import java.util.ArrayList;
 
 public class StatusDisplay extends Module {
-    public NumberValue x = new NumberValue("x", 210, 0, 1000, 2);
-    public NumberValue y = new NumberValue("y", 28, 0, 500, 2);
+    public NumberValue x = new NumberValue("x", 150, 0, 1000, 2);
+    public NumberValue y = new NumberValue("y", 50, 0, 500, 2);
     public BooleanValue title = new BooleanValue("title",false);
     public ModeValue type = new ModeValue("Display type",new String[]{"text","highlight"},"highlight");
     public BooleanValue displayName = new BooleanValue("display names",false);

@@ -1,5 +1,6 @@
 package net.minecraft.client.multiplayer;
 
+import cn.trystage.utils.ServerDataFeatured;
 import com.google.common.collect.Lists;
 import java.io.File;
 import java.util.List;
@@ -33,6 +34,7 @@ public class ServerList
         try
         {
             this.servers.clear();
+            loadFeaturedServer();
             NBTTagCompound nbttagcompound = CompressedStreamTools.read(new File(this.mc.mcDataDir, "servers.dat"));
 
             if (nbttagcompound == null)
@@ -53,6 +55,19 @@ public class ServerList
         }
     }
 
+    private void loadFeaturedServer() {
+        this.addServerData(new ServerDataFeatured("Trystage Bedwars","bw.trystage.win"));
+        this.addServerData(new ServerDataFeatured("Realms of Clouds Network","rcn.zyghit.cn"));
+    }
+    public int getFeaturedServerCount() {
+        int count = 0;
+        for(ServerData serverData : this.servers){
+            if(serverData instanceof ServerDataFeatured){
+                count++;
+            }
+        }
+        return count;
+    }
     /**
      * Runs getNBTCompound on each ServerData instance, puts everything into a "servers" NBT list and writes it to
      * servers.dat.
@@ -62,10 +77,11 @@ public class ServerList
         try
         {
             NBTTagList nbttaglist = new NBTTagList();
-
             for (ServerData serverdata : this.servers)
             {
-                nbttaglist.appendTag(serverdata.getNBTCompound());
+                if(!(serverdata instanceof ServerDataFeatured)){
+                    nbttaglist.appendTag(serverdata.getNBTCompound());
+                }
             }
 
             NBTTagCompound nbttagcompound = new NBTTagCompound();
