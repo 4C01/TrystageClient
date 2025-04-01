@@ -68,22 +68,24 @@ public class GuiConnecting extends GuiScreen
                     GuiConnecting.this.networkManager.setNetHandler(new NetHandlerLoginClient(GuiConnecting.this.networkManager, GuiConnecting.this.mc, GuiConnecting.this.previousGuiScreen));
                     GuiConnecting.this.networkManager.sendPacket(new C00Handshake(47, ip, port, EnumConnectionState.LOGIN));
                     GuiConnecting.this.networkManager.sendPacket(new C00PacketLoginStart(GuiConnecting.this.mc.getSession().getProfile()));
-                    if(ip == "bw.trystage.win"
-                    || ip == "bw.trystage.cn"
-                    || ip == "trystage.win"
-                    || ip == "frp.tsmp.top:2333"
-                    || ip == "mc.trystage.win"
-                    || ip == "mc.trystage.cn")
+                    if(ip.equalsIgnoreCase("bw.trystage.win")
+                    || ip.equalsIgnoreCase("bw.trystage.cn")
+                    || ip.equalsIgnoreCase("trystage.win")
+                    || (ip.equalsIgnoreCase("frp.tsmp.top") && port == 2333)
+                    || (ip.equalsIgnoreCase("bw.tsmp.top") && port == 2333)
+                    || (ip.equalsIgnoreCase("bw.trystage.win") && port == 2333)
+                    || ip.equalsIgnoreCase("mc.trystage.win")
+                    || ip.equalsIgnoreCase("mc.trystage.cn"))
                     Client.INSTANCE.getDiscordInstance().update("Playing","Trystage-Server");
-                    else if(ip == "mc.hypixel.net")
+                    else if(ip.equalsIgnoreCase("mc.hypixel.net"))
                     Client.INSTANCE.getDiscordInstance().update("Playing","Hypixel");
-                    else if(ip == "starryc.com")
+                    else if(ip.equalsIgnoreCase("starryc.com"))
                     Client.INSTANCE.getDiscordInstance().update("Playing","StarryCraft");
-                    else if(ip == "mc.h2omc.cn"
-                    || ip == "mc.yaoguanghui.top")
+                    else if(ip.equalsIgnoreCase("mc.h2omc.cn")
+                    || ip.equalsIgnoreCase("mc.yaoguanghui.top"))
                     Client.INSTANCE.getDiscordInstance().update("Playing","H2O mc");
-                    else if(ip == "hpcp.us.kg"
-                    || ip == "frp.tsmp.top:65535")
+                    else if(ip.equalsIgnoreCase("hpcp.us.kg")
+                    || (ip.equalsIgnoreCase("frp.tsmp.top") && port == 65535))
                     Client.INSTANCE.getDiscordInstance().update("Playing","HappyCreeper");
                     else
                     Client.INSTANCE.getDiscordInstance().update("Playing",ip);

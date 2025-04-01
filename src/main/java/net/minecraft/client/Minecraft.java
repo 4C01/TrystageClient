@@ -2408,7 +2408,6 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
         System.gc();
         this.systemTime = 0L;
-        Client.INSTANCE.getDiscordInstance().update("Playing","Single Player");
     }
 
     public void setDimensionAndSpawnPlayer(int dimension)
