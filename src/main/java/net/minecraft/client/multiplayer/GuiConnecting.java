@@ -79,6 +79,12 @@ public class GuiConnecting extends GuiScreen
                     Client.INSTANCE.getDiscordInstance().update("Playing","Hypixel");
                     else if(ip == "starryc.com")
                     Client.INSTANCE.getDiscordInstance().update("Playing","StarryCraft");
+                    else if(ip == "mc.h2omc.cn"
+                    || ip == "mc.yaoguanghui.top")
+                    Client.INSTANCE.getDiscordInstance().update("Playing","H2O mc");
+                    else if(ip == "hpcp.us.kg"
+                    || ip == "frp.tsmp.top:65535")
+                    Client.INSTANCE.getDiscordInstance().update("Playing","HappyCreeper");
                     else
                     Client.INSTANCE.getDiscordInstance().update("Playing",ip);
                 }
