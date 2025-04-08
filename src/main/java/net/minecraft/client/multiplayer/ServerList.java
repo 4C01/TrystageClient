@@ -58,6 +58,7 @@ public class ServerList
     private void loadFeaturedServer() {
         this.addServerData(new ServerDataFeatured("Trystage Bedwars","bw.tsmp.top"));
         this.addServerData(new ServerDataFeatured("Realms of Clouds Network","rcn.zyghit.cn"));
+        this.addServerData(new ServerDataFeatured("H2O mc","mc.h2omc.cn"));
     }
     public int getFeaturedServerCount() {
         int count = 0;
