@@ -23,6 +23,7 @@ public class ModuleManager {
 
     public void loadMods() {
         addModule(new HUD());
+        addModule(new KeyStroke());
         addModule(new PotionEffects());
         addModule(new ToggleSprint());
         addModule(new Clickgui());
