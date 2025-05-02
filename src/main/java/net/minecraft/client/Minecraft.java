@@ -1910,6 +1910,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
 
                 this.dispatchKeypresses();
 
+                Client.INSTANCE.eventManager.call(new EventKeyboard(k));
                 if (Keyboard.getEventKeyState())
                 {
                     if (k == 62 && this.entityRenderer != null)
@@ -1917,7 +1918,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage
                         this.entityRenderer.switchUseShader();
                     }
 
-                    Client.INSTANCE.eventManager.call(new EventKeyboard(k));
+
 
 
                     if (this.currentScreen != null)
