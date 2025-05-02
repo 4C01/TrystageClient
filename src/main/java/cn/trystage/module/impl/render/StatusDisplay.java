@@ -15,8 +15,8 @@ import net.minecraft.client.Minecraft;
 import java.awt.*;
 
 public class StatusDisplay extends Module {
-    public NumberValue x = new NumberValue("x", 150, 0, 1000, 2);
-    public NumberValue y = new NumberValue("y", 50, 0, 500, 2);
+    public NumberValue x = new NumberValue("x", 100, 0, 1000, 2);
+    public NumberValue y = new NumberValue("y", 32, 0, 500, 2);
     public BooleanValue title = new BooleanValue("title",false);
     public ModeValue type = new ModeValue("Display type",new String[]{"text","highlight"},"highlight");
     public BooleanValue displayName = new BooleanValue("display names",false);
