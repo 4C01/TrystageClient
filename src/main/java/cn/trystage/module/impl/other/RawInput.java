@@ -16,7 +16,7 @@ import java.lang.reflect.Constructor;
 public class RawInput extends Module {
     public RawInput() {
         super("RawInput", Category.OTHER);
-        this.setState(true);
+        this.setState(false);
     }
 
     @Getter

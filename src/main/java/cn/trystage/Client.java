@@ -26,6 +26,7 @@ public enum Client {
 
 
     public void start() {
+        System.setProperty("net.java.games.input.Logger", "false");
         SplashProgress.setPrgress(2,"Trystage - Initializing");
         runtime = Runtime.getRuntime();
         discordInstance.start();
