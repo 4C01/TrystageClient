@@ -23,7 +23,6 @@
       <root url="jar://$PROJECT_DIR$/lib/minecraft/commons-logging-1.1.3.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/minecraft/soundsystem-20120107.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/minecraft/commons-codec-1.9.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/minecraft/jinput-2.0.5.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/minecraft/libraryjavasound-20101123.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/minecraft/commons-lang3-3.3.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/minecraft/commons-io-2.4.jar!/" />
@@ -35,6 +34,7 @@
       <root url="jar://$PROJECT_DIR$/lib/minecraft/platform-3.4.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/minecraft/icu4j-core-mojang-51.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/minecraft/commons-compress-1.8.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/minecraft/jinput-2.0.5.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

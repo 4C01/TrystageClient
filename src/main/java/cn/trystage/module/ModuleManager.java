@@ -4,6 +4,7 @@ import cn.trystage.Client;
 import cn.trystage.annotations.event.EventTarget;
 import cn.trystage.event.impl.misc.EventKeyboard;
 import cn.trystage.module.impl.movement.ToggleSprint;
+import cn.trystage.module.impl.other.RawInput;
 import cn.trystage.module.impl.render.*;
 import cn.trystage.value.AbstractValue;
 import cn.trystage.value.impl.BooleanValue;
@@ -30,6 +31,7 @@ public class ModuleManager {
         addModule(new FullBright());
         addModule(new CustomCrossair());
         addModule(new StatusDisplay());
+        addModule(new RawInput());
     }
 
     public Module getModule(String name) {
