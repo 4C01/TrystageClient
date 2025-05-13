@@ -3194,7 +3194,7 @@ public class GameSettings
     {
         INVERT_MOUSE("INVERT_MOUSE", 0, "options.invertMouse", false, true),
         SENSITIVITY("SENSITIVITY", 1, "options.sensitivity", true, false),
-        FOV("FOV", 2, "options.fov", true, false, 30.0F, 110.0F, 1.0F),
+        FOV("FOV", 2, "options.fov", true, false, 30.0F, 140.0F, 1.0F),
         GAMMA("GAMMA", 3, "options.gamma", true, false),
         SATURATION("SATURATION", 4, "options.saturation", true, false),
         RENDER_DISTANCE("RENDER_DISTANCE", 5, "options.renderDistance", true, false, 2.0F, 16.0F, 1.0F),
